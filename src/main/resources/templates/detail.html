@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{common/layout :: main_layout(~{::title}, ~{::#caseDetail})}">
+<head>
+    <title th:text="${case.name} + ' - 详情'"></title>
+</head>
+<body>
+
+<div id="caseDetail">
+    <h2 th:text="${case.name}">案例名称</h2>
+    <p><strong>类型：</strong><span th:text="${case.type}">类型</span></p>
+    <hr>
+
+    <h4>实验内容：</h4>
+    <div th:text="${case.content}">内容...</div>
+
+    <h4>核心代码：</h4>
+    <pre><code class="language-java" th:text="${case.code}">
+public class HelloWorld { }
+    </code></pre>
+
+    <div style="margin-top: 20px;">
+        <a th:href="@{/cases/list}">返回列表</a>
+    </div>
+</div>
+
+</body>
+</html>
