@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:fragment="main_layout(title, content)">
+
 <head>
     <meta charset="UTF-8">
-    <title th:replace="${title}">默认标题</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
-    <style>
-        body { display: flex; flex-direction: column; min-height: 100vh; margin: 0; font-family: sans-serif; }
-        header { background: #333; color: white; padding: 1rem; }
-        main { flex: 1; padding: 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
-        footer { background: #f4f4f4; text-align: center; padding: 1rem; font-size: 0.8rem; }
-        nav a { color: white; margin-right: 15px; text-decoration: none; }
-    </style>
 </head>
-<body>
-
 <header>
     <nav>
         <strong>实验案例管理系统</strong>
-        <a th:href="@{/cases/list}">案例列表</a>
-        <a th:href="@{/cases/add}">新增案例</a>
+
+        <a th:each="menu : ${menus}"
+           th:href="@{${menu.url}}"
+           th:text="${menu.name}">
+            动态菜单名
+        </a>
     </nav>
 </header>
 

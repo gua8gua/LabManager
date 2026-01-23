@@ -1,0 +1,47 @@
+/* 错误页面容器 */
+.error-container {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.error-icon {
+    font-size: 80px;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+.error-code {
+    font-size: 120px;
+    font-weight: 800;
+    color: #2c3e50;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.error-text {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin: 20px 0 40px;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* 简单的入场动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -5,3 +5,7 @@ spring:
     password: yourpassword
   thymeleaf:
     cache: false # 关闭缓存
+    web:
+      resources:
+        cache:
+          period: 0

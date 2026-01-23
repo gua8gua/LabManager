@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{common/layout :: main_layout(~{::title}, ~{::#errorContent})}">
+<head>
+    <title>页面未找到 - LabManager</title>
+
+
+</head>
+<body>
+
+<div id="errorContent" class="error-container">
+    <h1 class="error-code">404</h1>
+    <p class="error-text" th:text="${errorMsg != null ? errorMsg : '抱歉，您访问的页面不存在或已迁移。'}"></p>
+
+    <div class="error-actions">
+        <a th:href="@{/cases/list}" class="btn">返回案例列表</a>
+        <button onclick="history.back()" class="btn btn-secondary">返回上一页</button>
+    </div>
+</div>
+
+</body>
+</html>
