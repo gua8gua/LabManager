@@ -167,3 +167,57 @@ button.btn {
 .btn:hover {
     background-color: #2980b9;
 }
+
+/* 表格样式 */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.data-table th { background-color: #f8f9fa; color: #666; }
+.data-table tr:hover { background-color: #fafafa; }
+
+/* 标签样式 */
+.tag {
+    background: #e1f5fe;
+    color: #039be5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* 表单样式简写 */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.case-article h3 {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    color: #34495e;
+}
+
+.case-article p {
+    margin: 15px 0;
+    line-height: 1.8;
+    color: #444;
+}
+
+.case-article ol {
+    margin-left: 20px;
+    color: #555;
+}
+
+.case-article ol li {
+    margin-bottom: 10px;
+}

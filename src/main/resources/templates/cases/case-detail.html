@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{common/layout :: main_layout(~{::title}, ~{::#detailContent})}">
+<head>
+    <title th:text="${case.name + ' - 详情'}">案例详情</title>
+</head>
+<body>
+<div id="detailContent">
+    <div style="border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">
+        <a th:href="@{/cases/list}" style="color: #7f8c8d; text-decoration: none; font-size: 0.9rem;"> < 返回列表 </a>
+        <h1 th:text="${case.name}" style="margin-top: 15px; border: none; padding: 0;">案例标题</h1>
+        <div style="margin-top: 10px;">
+            <span class="tag" th:text="${case.type}">分类</span>
+            <span style="color: #95a5a6; font-size: 0.9rem; margin-left: 15px;" th:text="'发布于：' + ${case.date}">2026-01-01</span>
+        </div>
+    </div>
+
+    <div class="case-article">
+        <h3>实验背景</h3>
+        <p>这里是关于 <strong th:text="${case.name}">项目</strong> 的详细介绍。目前数据是从模拟列表通过 ID 获取的。</p>
+
+        <h3>实验步骤</h3>
+        <ol>
+            <li>准备相关环境与数据。</li>
+            <li>配置参数并初始化模型。</li>
+            <li>执行实验并记录结果。</li>
+        </ol>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <button class="btn" onclick="alert('即将进入实验环境...')">开始实验</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{common/layout :: main_layout(~{::title}, ~{::#listContent})}">
+<head>
+    <title>案例列表 - 实验案例管理系统</title>
+</head>
+<body>
+<div id="listContent">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>实验案例列表</h2>
+        <a th:href="@{/cases/add}" class="btn">＋ 新增实验案例</a>
+    </div>
+
+    <table class="data-table">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>案例名称</th>
+            <th>分类</th>
+            <th>创建日期</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${caseList}">
+            <td th:text="${item.id}">1</td>
+            <td th:text="${item.name}">名称</td>
+            <td><span class="tag" th:text="${item.type}">类型</span></td>
+            <td th:text="${item.date}">日期</td>
+            <td>
+                <a th:href="@{/cases/detail/{id}(id=${item.id})}" style="color: #3498db;">详情</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
